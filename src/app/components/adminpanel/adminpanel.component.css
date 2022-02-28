@@ -1,0 +1,50 @@
+.layout {
+  min-height: 100vh;
+  padding-top: 3.4rem;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+}
+
+.logo h2 {
+  color: rgba(236, 236, 236, 0.842);
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+}
+
+nz-content {
+  margin: 24px 16px 0;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 360px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+/* custom */
+hr {
+  border: 0.5px solid rgba(255, 255, 255, 0.247);
+  margin: 0 10px;
+}
+
+#adminpanel {
+  display: flex;
+  width: 100%;
+}
+
+#adminpanel .second {
+  margin: 5rem auto;
+  width: 80%;
+  padding: 0 1rem;
+
+}

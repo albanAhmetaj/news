@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="mt6">
+    <h1 class="center mt2">Login</h1>
+    <form nz-form [formGroup]="logUser" class="login-form" (ngSubmit)="loginUser()">
+      <!-- Server errors -->
+      <ng-container *ngIf="errors">{{ errors }}</ng-container>
+
+      <!-- Email -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="emailErrs" nzHasFeedback>
+          <nz-input-group nzPrefixIcon="user">
+            <input type="email" nz-input formControlName="email" placeholder="Email" />
+            <ng-template #emailErrs let-control>
+              <ng-container *ngIf="email.errors?.required">Email is required!</ng-container>
+              <ng-container *ngIf="email.errors?.minlength">Email must be at least 5 characters!</ng-container>
+            </ng-template>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Password -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="passwordErrs" nzHasFeedback>
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Password" />
+            <ng-template #passwordErrs let-control>
+              <ng-container *ngIf="password.errors?.required">Password is required!</ng-container>
+              <ng-container *ngIf="password.errors?.minlength">Password must be at least 3 characters!</ng-container>
+            </ng-template>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Login -->
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+    </form>
+  </div>
+</div>

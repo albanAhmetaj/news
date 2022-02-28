@@ -1,0 +1,27 @@
+<nz-layout class="layout">
+  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
+    <div class="logo">
+      <h2>Admin Panel</h2>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item [routerLink]="['/adminpanel/posts']">
+        <i nz-icon nzType="file-text" nzTheme="outline"></i>
+        <span>Posts</span>
+      </li>
+      <hr>
+      <li *ngIf="getRole == 1" nz-menu-item [routerLink]="['/adminpanel/managers']">
+        <i nz-icon nzType="user"></i>
+        <span>Managers</span>
+      </li>
+      <li *ngIf="getRole == 1 || getRole == 2" nz-menu-item [routerLink]="['/adminpanel/authors']">
+        <i nz-icon nzType="user"></i>
+        <span>Authors</span>
+      </li>
+      <hr>
+      <li nz-menu-item [routerLink]="['/adminpanel/myprofile']">
+        <i nz-icon nzType="edit" nzTheme="outline"></i>
+        <span>My Profile</span>
+      </li>
+    </ul>
+  </nz-sider>
+</nz-layout>

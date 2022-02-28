@@ -1,0 +1,21 @@
+.createBtn {
+  margin-bottom: 1rem;
+}
+
+.postCard {
+  margin-bottom: 5px;
+}
+
+.mb05 {
+  margin-bottom: 0.5rem;
+}
+
+
+.ant-row-space-between {
+  justify-content: left;
+}
+
+p {
+  white-space: normal;
+  overflow: overlay;
+}

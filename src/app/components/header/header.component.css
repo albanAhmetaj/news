@@ -1,0 +1,72 @@
+/* Custom Styles Start */
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .navChildOne {
+  justify-content: flex-start;
+}
+
+.nav .navChildTwo {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.navLine {
+  padding-top: 6px;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0px 5px 10px -3px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom Styles End */
+
+/* NZ start */
+nz-header {
+  position: fixed;
+  width: 100%;
+}
+
+.ant-layout-header {
+  height: 55px;
+  padding: 0 50px;
+  line-height: 50px;
+  padding-top: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  z-index: 99;
+}
+
+[nz-menu] {
+  line-height: 50px;
+}
+
+.ant-menu {
+  background: none;
+}
+
+.ant-menu-horizontal .ant-menu-item {
+  margin-top: -3px;
+}
+
+.ant-menu-horizontal .ant-menu-item:hover,
+.ant-menu-horizontal .ant-menu-item-selected {
+  color: #1890ff;
+  border-bottom: 2px solid #1890ff;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-menu-item {
+  transition:
+    color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    border 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    padding 0.15s cubic-bezier(0.65, 0.05, 0.36, 1)
+}
+
+/* NZ end */

@@ -1,0 +1,7 @@
+.listItem {
+  border-top: 1px rgba(128, 128, 128, 0.15) solid;
+}
+
+.listItem:last-child {
+  border-bottom: 1px rgba(128, 128, 128, 0.15) solid;
+}

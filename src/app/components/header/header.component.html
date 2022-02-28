@@ -1,0 +1,32 @@
+<nz-header class="navLine">
+  <ul nz-menu nzTheme="light" nzMode="horizontal" class="nav">
+    <span class="navChildOne">
+      <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <a [routerLink]="['/']">
+          News Agency
+        </a>
+      </li>
+    </span>
+    <span class="navChildTwo">
+      <li *ngIf="authService.isAuthenticated()" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <i nz-icon nzType="user" nzTheme="outline"></i>
+        <a [routerLink]="['/adminpanel']" routerLinkActive="router-link-active">
+          Admin Panel
+        </a>
+      </li>
+
+      <li nz-menu-item *ngIf="authService.loggedIn()">
+        <i nz-icon nzType="logout" nzTheme="outline"></i>
+        <a [routerLink]="['/logout']" (click)="authService.logoutUser()">
+          Log Out
+        </a>
+      </li>
+      <li nz-menu-item routerLinkActive="ant-menu-item-selected" *ngIf="!authService.loggedIn()">
+        <i nz-icon nzType="login" nzTheme="outline"></i>
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+          Login
+        </a>
+      </li>
+    </span>
+  </ul>
+</nz-header>

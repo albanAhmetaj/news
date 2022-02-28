@@ -1,0 +1,31 @@
+<button nz-button nzType="primary" (click)="goBack()"><i nz-icon nzType="left"></i>Go Back</button>
+
+<div class="md-form">
+  <div class="mt6">
+    <h1 class=" center mt2">Edit Post</h1>
+    <form nz-form [formGroup]="editPostData" class="register-form" (ngSubmit)="editPost()" #editPostForm="ngForm">
+      <!-- Title -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="titleErrs" nzHasFeedback>
+          <input type="text" nz-input formControlName="title" placeholder="Title" />
+          <ng-template #titleErrs let-control>
+            <ng-container *ngIf="title.errors?.required">Title is required!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Description -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="descErrs" nzHasFeedback>
+          <textarea type="text" nz-input formControlName="description" placeholder="Description" rows="5"></textarea>
+          <ng-template #descErrs let-control>
+            <ng-container *ngIf="description.errors?.required">Description is required!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- Create New Post -->
+      <button nz-button class="register-form-button register-form-margin" [nzType]="'primary'"
+        [disabled]="!editPostForm.valid">Save changes</button>
+    </form>
+  </div>
+</div>

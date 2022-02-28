@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="mt6">
+    <h1 class=" center mt2">Register</h1>
+    <form nz-form [formGroup]="registerUser" class="register-form" (ngSubmit)="registerNewUser()"
+      #registerUserForm="ngForm">
+      <!-- Name -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="nameErrs" nzHasFeedback>
+          <input type="text" nz-input formControlName="firstName" placeholder="First name" />
+          <ng-template #nameErrs let-control>
+            <ng-container *ngIf="name.errors?.required">Name is required!</ng-container>
+            <ng-container *ngIf="name.errors?.minlength">Name must be at least 3 characters!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Last Name -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="lastNameErrs" nzHasFeedback>
+          <input type="text" id="lastName" nz-input formControlName="lastName" placeholder="Last name" />
+          <ng-template #lastNameErrs let-control>
+            <ng-container *ngIf="lastName.errors?.required">Last name is required!</ng-container>
+            <ng-container *ngIf="lastName.errors?.minlength">Last name must be at least 3 characters!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Email -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="emailErrs" nzHasFeedback>
+          <!-- <nz-input-group nzPrefixIcon="user"> -->
+          <input type="email" nz-input formControlName="email" placeholder="Email" />
+          <ng-template #emailErrs let-control>
+            <ng-container *ngIf="email.errors?.required">Email is required!</ng-container>
+            <ng-container *ngIf="email.errors?.minlength">Email must be at least 5 characters!</ng-container>
+          </ng-template>
+          <!-- </nz-input-group> -->
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Password -->
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="passwordErrs" nzHasFeedback>
+          <!-- <nz-input-group nzPrefixIcon="lock"> -->
+          <input type="password" nz-input formControlName="password" placeholder="Password" />
+          <ng-template #passwordErrs let-control>
+            <ng-container *ngIf="password.errors?.required">Password is required!</ng-container>
+            <ng-container *ngIf="password.errors?.minlength">Password must be at least 3 characters!</ng-container>
+          </ng-template>
+          <!-- </nz-input-group> -->
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- Role ID -->
+      <nz-form-item>
+        <nz-radio-group formControlName="roleID">
+          <label nz-radio nzValue=1>Admin</label>
+          <label nz-radio nzValue=2>Manager</label>
+          <label nz-radio nzValue=3>Author</label>
+        </nz-radio-group>
+      </nz-form-item>
+
+      <!-- Register -->
+      <button nz-button class="register-form-button register-form-margin" [nzType]="'primary'"
+        [disabled]="!registerUserForm.valid">Register User</button>
+    </form>
+  </div>
+</div>

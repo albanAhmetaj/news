@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="mt6">
+    <div nz-row>
+      <div nz-col [nzSpan]="6" [nzPush]="18">
+        <span><i>Posted by:</i></span>
+        <h3>{{ post?.user.firstName }} {{ post?.user.lastName }}</h3>
+      </div>
+      <div nz-col [nzSpan]="18" [nzPull]="6">
+        <h1>{{ post?.title }}</h1>
+        <img *ngIf="post" src="http://localhost:3000/uploads/{{post?.image}}" />
+        <p>{{ post?.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
